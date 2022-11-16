@@ -17,6 +17,7 @@
       <h4> Sources: </h4>
     <li><a href ="https://bl.ocks.org/mbostock/39b34968ad5eab65de1d7da81f78bb27" target = "_blank">California Population Density II</a></li>
     <li><a href ="https://bl.ocks.org/vkuchinov/1681c9bc721fa17e8dcb071dd8207a1c" target = "_blank">D3.JS Simplified Buttons</a></li>
+    <li><a href ="https://github.com/Turner2906/Data-Visualization" target = "_blank">Github Link</a></li>
   </body>
 </html>
 
@@ -37,7 +38,7 @@ var color = d3.scaleThreshold()
 
 var borderClicked = 0, colorClicked = 0;
 
-var data = [{label: "Change Color", x: 100, y: 60, id: "Color1", function: 
+var data = [{label: "Change Color", x: 500, y: 60, id: "Color1", function: 
              function(){
                  if (colorClicked == 0){
                         color.range(d3.schemeOrRd[9]);
@@ -50,7 +51,7 @@ var data = [{label: "Change Color", x: 100, y: 60, id: "Color1", function:
                         colorClicked = 0;
                  }
              } },
-           {label: "Toggle Border", x: 250, y: 60, id: "Border", function: 
+           {label: "Toggle Border", x: 650, y: 60, id: "Border", function: 
              function(){
                     if (borderClicked == 0){
                         borders.attr("stroke-opacity", 0);
@@ -92,6 +93,26 @@ g.append("text")
     .attr("text-anchor", "start")
     .attr("font-weight", "bold")
     .text("Population per square mile");
+    
+g.append("text")
+    .attr("class", "title")
+    .attr("x", 10)
+    .attr("y", 10)
+    .attr("fill", "#000")
+    .attr("text-anchor", "start")
+    .attr("font-weight", "bold")
+    .attr("font-size", 35)
+    .text("Colorado Population");
+    
+g.append("text")
+    .attr("class", "title")
+    .attr("x", 10)
+    .attr("y", 50)
+    .attr("fill", "#000")
+    .attr("text-anchor", "start")
+    .attr("font-weight", "bold")
+    .attr("font-size", 35)
+    .text("Density 2022");
 
 var density, borders;
 
